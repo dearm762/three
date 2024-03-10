@@ -1,5 +1,7 @@
 import * as T from 'three'
 
-const renderer = new T.WebGL1Renderer()
+const R = new T.WebGL1Renderer()
 
-renderer.setSize(window.innerWidth, window.innerHeight)
+R.setSize(window.innerWidth, window.innerHeight)
+
+document.body.appendChild(R.domElement)
