@@ -585,7 +585,7 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 
 },{}],"dV6cC":[function(require,module,exports) {
 var _three = require("three");
-const R = new _three.WebGL1Renderer();
+const R = new (0, _three.WebGL1Renderer)();
 R.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(R.domElement);
 

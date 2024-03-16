@@ -1,6 +1,6 @@
-import * as T from 'three'
+import { WebGL1Renderer } from 'three'
 
-const R = new T.WebGL1Renderer()
+const R = new WebGL1Renderer()
 
 R.setSize(window.innerWidth, window.innerHeight)
 
