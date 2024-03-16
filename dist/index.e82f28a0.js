@@ -585,9 +585,11 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 
 },{}],"dV6cC":[function(require,module,exports) {
 var _three = require("three");
-const R = new (0, _three.WebGL1Renderer)();
-R.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(R.domElement);
+const renderer = new (0, _three.WebGL1Renderer)();
+const scene = new (0, _three.Scene)();
+const camera = new (0, _three.PerspectiveCamera)();
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
 
 },{"three":"ktPTu"}],"ktPTu":[function(require,module,exports) {
 /**
