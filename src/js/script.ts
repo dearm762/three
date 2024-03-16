@@ -11,7 +11,7 @@ const camera = new PerspectiveCamera(
 const axesHelper = new AxesHelper(5)
 
 scene.add(axesHelper)
-camera.position.z = 5
+camera.position.set(0, 0, 1)
 
 R.setSize(window.innerWidth, window.innerHeight)
 R.render(scene, camera)
