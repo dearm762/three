@@ -1,6 +1,6 @@
-import { WebGL1Renderer, Scene, PerspectiveCamera } from 'three'
+import { WebGLRenderer, Scene, PerspectiveCamera, AxesHelper } from 'three'
 
-const renderer = new WebGL1Renderer()
+const R = new WebGLRenderer()
 const scene = new Scene()
 const camera = new PerspectiveCamera(
 	75,
@@ -8,8 +8,12 @@ const camera = new PerspectiveCamera(
 	0.1,
 	1000
 )
+const axesHelper = new AxesHelper(5)
 
-renderer.setSize(window.innerWidth, window.innerHeight)
-renderer.render(scene, camera)
+scene.add(axesHelper)
+camera.position.z = 5
 
-document.body.appendChild(renderer.domElement)
+R.setSize(window.innerWidth, window.innerHeight)
+R.render(scene, camera)
+
+document.body.appendChild(R.domElement)
