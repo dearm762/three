@@ -7,6 +7,7 @@ import {
 	MeshBasicMaterial,
 	Mesh,
 } from 'three'
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
 const R = new WebGLRenderer()
 const scene = new Scene()
@@ -28,8 +29,11 @@ scene.add(box)
 
 function animationOfBox() {
 	box.rotation.z += 0.01
+	box.material.color.set(0xffffff)
 	R.render(scene, camera)
 }
+
+const orbit = new OrbitControls(camera, R.domElement)
 
 R.setSize(window.innerWidth, window.innerHeight)
 R.setAnimationLoop(animationOfBox)
