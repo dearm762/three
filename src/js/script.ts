@@ -8,10 +8,12 @@ import {
 	Mesh,
 	PlaneGeometry,
 	GridHelper,
+	DoubleSide,
 } from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
-const R = new WebGLRenderer()
+const R = new WebGLRenderer({ antialias: true, alpha: true })
+R.setClearColor(0x1da1f2)
 const scene = new Scene()
 const axesHelper = new AxesHelper(5)
 const camera = new PerspectiveCamera(
@@ -25,12 +27,15 @@ scene.add(axesHelper)
 camera.position.set(0, 0, 5)
 
 const boxGeometry = new BoxGeometry()
-const boxMaterial = new MeshBasicMaterial({ color: 0x1da1f2 })
+const boxMaterial = new MeshBasicMaterial({ color: 'black' })
 const box = new Mesh(boxGeometry, boxMaterial)
 scene.add(box)
 
 const planeGeometry = new PlaneGeometry(30, 30)
-const planeMaterial = new MeshBasicMaterial({ color: 0xffffff })
+const planeMaterial = new MeshBasicMaterial({
+	color: 0xffffff,
+	side: DoubleSide,
+})
 const plane = new Mesh(planeGeometry, planeMaterial)
 plane.rotation.x = -0.5 * Math.PI
 scene.add(plane)
