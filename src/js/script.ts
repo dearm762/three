@@ -30,7 +30,7 @@ const camera = new PerspectiveCamera(
 )
 
 // scene.add(axesHelper)
-camera.position.set(0, 0, 5)
+camera.position.set(0, 0, 50)
 
 const boxGeometry = new BoxGeometry()
 const boxMaterial = new MeshBasicMaterial({ color: 0x000000 })
@@ -43,7 +43,7 @@ const planeMaterial = new MeshBasicMaterial({
 	side: DoubleSide,
 })
 const plane = new Mesh(planeGeometry, planeMaterial)
-plane.rotation.x = -0.5 * Math.PI
+
 scene.add(plane)
 
 const gridHelper = new GridHelper(30)
