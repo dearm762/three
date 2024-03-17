@@ -6,6 +6,8 @@ import {
 	BoxGeometry,
 	MeshBasicMaterial,
 	Mesh,
+	PlaneGeometry,
+	GridHelper,
 } from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
@@ -23,13 +25,20 @@ scene.add(axesHelper)
 camera.position.set(0, 0, 5)
 
 const boxGeometry = new BoxGeometry()
-const boxMaterial = new MeshBasicMaterial({ color: 0x00ff00 })
+const boxMaterial = new MeshBasicMaterial({ color: 0x1da1f2 })
 const box = new Mesh(boxGeometry, boxMaterial)
 scene.add(box)
 
+const planeGeometry = new PlaneGeometry(30, 30)
+const planeMaterial = new MeshBasicMaterial({ color: 0xffffff })
+const plane = new Mesh(planeGeometry, planeMaterial)
+scene.add(plane)
+
+const gridHelper = new GridHelper()
+scene.add(gridHelper)
+
 function animationOfBox() {
-	box.rotation.z += 0.01
-	box.material.color.set(0xffffff)
+	box.rotation.z += 0.1
 	R.render(scene, camera)
 }
 
