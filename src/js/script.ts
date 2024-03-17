@@ -32,9 +32,10 @@ scene.add(box)
 const planeGeometry = new PlaneGeometry(30, 30)
 const planeMaterial = new MeshBasicMaterial({ color: 0xffffff })
 const plane = new Mesh(planeGeometry, planeMaterial)
+plane.rotation.x = -0.5 * Math.PI
 scene.add(plane)
 
-const gridHelper = new GridHelper()
+const gridHelper = new GridHelper(30)
 scene.add(gridHelper)
 
 function animationOfBox() {
