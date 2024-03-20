@@ -37,7 +37,7 @@ const plane = new Mesh(planeGeometry, planeMaterial)
 scene.add(plane)
 
 const gridHelper = new GridHelper(30)
-scene.add(gridHelper)
+// scene.add(gridHelper)
 
 const orbitControls = new OrbitControls(camera, renderer.domElement)
 orbitControls.enableDamping = true
