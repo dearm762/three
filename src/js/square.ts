@@ -37,19 +37,29 @@ window.addEventListener('resize', () => {
 	renderer.setSize(window.innerWidth, window.innerHeight)
 })
 
-scene.add(gridHelper)
-scene.add(axesHelper)
+// scene.add(gridHelper)
+// scene.add(axesHelper)
 
 document.body.appendChild(renderer.domElement)
 
 const points = []
-points.push(new Vector3(-30, 0, 0) as never)
-points.push(new Vector3(-20, 1, 0) as never)
-points.push(new Vector3(-10, 2, 0) as never)
-points.push(new Vector3(0, 3, 0) as never)
-points.push(new Vector3(10, 2, 0) as never)
-points.push(new Vector3(20, 1, 0) as never)
-points.push(new Vector3(30, 0, 0) as never)
+points.push(new Vector3(-15, -15, -15) as never)
+points.push(new Vector3(15, -15, -15) as never)
+points.push(new Vector3(15, 15, -15) as never)
+points.push(new Vector3(-15, 15, -15) as never)
+points.push(new Vector3(-15, -15, -15) as never)
+points.push(new Vector3(-15, -15, 15) as never)
+points.push(new Vector3(15, -15, 15) as never)
+points.push(new Vector3(15, -15, -15) as never)
+points.push(new Vector3(15, 15, -15) as never)
+points.push(new Vector3(15, 15, 15) as never)
+points.push(new Vector3(15, -15, 15) as never)
+points.push(new Vector3(-15, -15, 15) as never)
+points.push(new Vector3(-15, 15, 15) as never)
+points.push(new Vector3(15, 15, 15) as never)
+points.push(new Vector3(-15, 15, 15) as never)
+points.push(new Vector3(-15, 15, -15) as never)
+
 
 const geometry = new BufferGeometry().setFromPoints(points)
 
