@@ -1,1 +1,1 @@
-# Three + Vanilla js
+# 3D Graphical Three-app with Typescript
