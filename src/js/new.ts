@@ -2,6 +2,8 @@ import {
 	WebGLRenderer,
 	Scene,
 	PerspectiveCamera,
+	AxesHelper,
+	GridHelper,
 	Vector3,
 	LineBasicMaterial,
 	BufferGeometry,
@@ -12,6 +14,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 const renderer = new WebGLRenderer()
 const scene = new Scene()
 
+const axesHelper = new AxesHelper(25)
 const camera = new PerspectiveCamera(
 	75,
 	window.innerWidth / window.innerHeight,
@@ -20,6 +23,8 @@ const camera = new PerspectiveCamera(
 )
 
 camera.position.set(0, 0, 50)
+
+const gridHelper = new GridHelper(30)
 
 const orbitControls = new OrbitControls(camera, renderer.domElement)
 orbitControls.enableDamping = true
@@ -31,6 +36,9 @@ window.addEventListener('resize', () => {
 	camera.updateProjectionMatrix()
 	renderer.setSize(window.innerWidth, window.innerHeight)
 })
+
+// scene.add(gridHelper)
+// scene.add(axesHelper)
 
 document.body.appendChild(renderer.domElement)
 
