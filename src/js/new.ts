@@ -4,10 +4,6 @@ import {
 	PerspectiveCamera,
 	AxesHelper,
 	GridHelper,
-	Vector3,
-	LineBasicMaterial,
-	BufferGeometry,
-	Line,
 } from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
@@ -38,38 +34,9 @@ window.addEventListener('resize', () => {
 })
 
 // scene.add(gridHelper)
-// scene.add(axesHelper)
+scene.add(axesHelper)
 
 document.body.appendChild(renderer.domElement)
-
-const points = []
-points.push(new Vector3(-15, -15, -15) as never)
-points.push(new Vector3(15, -15, -15) as never)
-points.push(new Vector3(15, 15, -15) as never)
-points.push(new Vector3(-15, 15, -15) as never)
-points.push(new Vector3(-15, -15, -15) as never)
-points.push(new Vector3(-15, -15, 15) as never)
-points.push(new Vector3(15, -15, 15) as never)
-points.push(new Vector3(15, -15, -15) as never)
-points.push(new Vector3(15, 15, -15) as never)
-points.push(new Vector3(15, 15, 15) as never)
-points.push(new Vector3(15, -15, 15) as never)
-points.push(new Vector3(-15, -15, 15) as never)
-points.push(new Vector3(-15, 15, 15) as never)
-points.push(new Vector3(15, 15, 15) as never)
-points.push(new Vector3(-15, 15, 15) as never)
-points.push(new Vector3(-15, 15, -15) as never)
-
-
-const geometry = new BufferGeometry().setFromPoints(points)
-
-const material = new LineBasicMaterial({
-	color: 0xffffff,
-	linewidth: 0,
-})
-
-const line = new Line(geometry, material)
-scene.add(line)
 
 function animate() {
 	requestAnimationFrame(animate)

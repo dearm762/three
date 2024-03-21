@@ -52,7 +52,6 @@ points.push(new Vector3(15, 15, 15) as never)
 points.push(new Vector3(-15, 15, 15) as never)
 points.push(new Vector3(-15, 15, -15) as never)
 
-
 const geometry = new BufferGeometry().setFromPoints(points)
 
 const material = new LineBasicMaterial({
